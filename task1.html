@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS TASK-1</title>
+</head>
+<body>
+    <h1>Reverse a Number</h1>
+
+    <p>Enter a number to reverse:</p>
+    <input type="number" id="inputNumber">
+    <button onclick="reverseAndDisplay()">Reverse</button>
+
+    <p>Reversed Number: <span id="result"></span></p>
+
+    <script>
+        function reverseNumber(number) {
+            let numStr = number.toString();
+            let reversedStr = numStr.split('').reverse().join('');
+            let reversedNumber = parseInt(reversedStr);
+            return reversedNumber;
+        }
+
+        function reverseAndDisplay() {
+            const inputNumber = document.getElementById('inputNumber').value;
+            const reversed = reverseNumber(Number(inputNumber));
+            const resultElement = document.getElementById('result');
+            resultElement.textContent = reversed;
+        }
+    </script>
+</body>
+</html>
+
+  

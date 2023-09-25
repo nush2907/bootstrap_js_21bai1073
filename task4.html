@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Task-4</title>
+</head>
+<body>
+    <button id="dateButton">Show Current Date</button>
+    <p id="dateResult"></p>
+    
+    <button onclick="displayDate()">Show Current Time</button>
+
+    <script>
+
+   function displayDate() {
+  document.getElementById("time").innerHTML = Date();
+   }
+        function showCurrentDate() {
+            const currentDate = new Date();
+            const options = {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+            };
+            const formattedDate = currentDate.toLocaleDateString('en-UK', options).replace(' ', '/');
+            document.getElementById('dateResult').textContent = `${formattedDate}`;
+        }
+
+        document.getElementById('dateButton').addEventListener('click', showCurrentDate);
+    </script>
+    <p id="time"></p>
+</body>
+</html>

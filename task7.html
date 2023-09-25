@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>JS Task-7</title>
+    <link href="task7.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h2 style="margin-top: 50px;">Click the following buttons to handle animation:</h2>
+            <button id="startButton" style="margin-top: 270px;margin-left: 185px;">Start Animation</button>
+            <button id="stopButton" >Stop Animation</button>
+          <div class="track"></div>
+          <div class="train">
+            <div class="front"></div>
+            <div class="wheels">
+              <div class="smallOne"></div>
+              <div class="smallTwo"></div>
+              <div class="big"></div>
+            </div>
+            <div class="cord"></div>
+            <div class="coach"></div>
+            <div class="coachTwo"></div>
+            <div class="windows"></div>  
+            <div id="up" class="steam"></div>
+            <div id="up" class="steam2"></div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+const startButton = document.getElementById('startButton');
+const stopButton = document.getElementById('stopButton');
+const train = document.querySelector('.train');
+const steam = document.querySelector('.steam');
+const steam2 = document.querySelector('.steam2');
+const smallOne = document.querySelector('.smallOne');
+const smallTwo = document.querySelector('.smallTwo');
+const big = document.querySelector('.big');
+
+let animationInterval;
+
+function startAnimation() {
+    train.style.animation = 'scale 1s linear infinite';
+    steam.style.animation = 'up 2.5s ease-out infinite';
+    steam2.style.animation = 'up 0.5s ease-out infinite 1s';
+    smallOne.style.animation = 'spin .5s infinite linear';
+    smallTwo.style.animation = 'spin .5s infinite linear';
+    big.style.animation = 'spin .5s infinite linear';
+}
+
+function stopAnimation() {
+    train.style.animation = '';
+    steam.style.animation = '';
+    steam2.style.animation = '';
+    smallOne.style.animation = '';
+    smallTwo.style.animation = '';
+    big.style.animation = '';
+}
+
+startButton.addEventListener('click', () => {
+    startAnimation();
+});
+
+stopButton.addEventListener('click', () => {
+    stopAnimation();
+});
+
+    </script>
+</body>
+</html>

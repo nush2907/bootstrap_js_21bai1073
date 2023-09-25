@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS TASK-2</title>
+</head>
+<body>
+    <h1>Alphabetize String</h1>
+    <p>Enter a string below to alphabetize it:</p>
+    <input type="text" id="inputString" placeholder="Enter a string">
+    <button onclick="alphabetize()">Alphabetize</button>
+    <p>Result: <span id="result"></span></p>
+
+    <script>
+        function alphabetize() {
+            const inputString = document.getElementById('inputString').value;
+            const sortedString = alphabetizeString(inputString);
+            document.getElementById('result').textContent = sortedString;
+        }
+
+        function alphabetizeString(inputString) {
+            const sortedArray = inputString.split('').sort();
+            const sortedString = sortedArray.join('');
+
+            return sortedString;
+        }
+    </script>
+</body>
+</html>

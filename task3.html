@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Task-3</title>
+</head>
+<body>
+    <h1>Multiplication and Division Calculator</h1>
+    <p>Enter two numbers below:</p>
+    <input type="number" id="num1" placeholder="Enter the first number">
+    <input type="number" id="num2" placeholder="Enter the second number">
+
+    <p>Select an operation:</p>
+    <label for="operationMultiply">Multiply</label>
+    <input type="radio" id="operationMultiply" name="operation" value="multiply" checked>
+    <label for="operationDivide">Divide</label>
+    <input type="radio" id="operationDivide" name="operation" value="divide">
+    
+    <button onclick="calculate()">Calculate</button>
+    
+    <p>Result:</p>
+    <p id="result"></p>
+
+    <script>
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.querySelector('input[name="operation"]:checked').value;
+            
+            if (isNaN(num1) || isNaN(num2)) {
+                alert('Please enter valid numbers.');
+                return;
+            }
+            
+            let result;
+            if (operation === 'multiply') {
+                result = num1 * num2;
+            } else if (operation === 'divide' && num2 !== 0) {
+                result = num1 / num2;
+            } else {
+                alert('Cannot divide by zero.');
+                return;
+            }
+            
+            document.getElementById('result').textContent = `Result: ${result}`;
+        }
+    </script>
+</body>
+</html>
